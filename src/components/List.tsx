@@ -44,7 +44,7 @@ export function List({ users, onEditar, onExcluir }: ListProps) {
 
       <div className="flex flex-wrap justify-start gap-2">
         {users.map((user) => (
-          <Card key={user.id} className="hover:shadow-md transition-shadow">
+          <Card key={user._id} className="hover:shadow-md transition-shadow">
             <CardHeader className="pb-3">
               <div className="flex items-start justify-between">
                 <div>
@@ -63,7 +63,7 @@ export function List({ users, onEditar, onExcluir }: ListProps) {
                   <Button
                     onClick={() => {
                       if (confirm(`Tem certeza que deseja excluir ${user.name}?`)) {
-                        onExcluir(String(user.id))
+                        onExcluir(String(user._id))
                       }
                     }}
                     className="h-8 w-8 p-0 text-slate-600 hover:text-red-600 hover:bg-red-50"

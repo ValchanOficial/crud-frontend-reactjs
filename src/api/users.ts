@@ -25,7 +25,7 @@ export const fetchUserById = async (id: string): Promise<User> => {
 };
 
 export const updateUser = async (user: User): Promise<User> => {
-  const response = await fetch(`${baseURL}/${user.id}`, {
+  const response = await fetch(`${baseURL}/${user._id}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
@@ -36,6 +36,5 @@ export const updateUser = async (user: User): Promise<User> => {
 };
 
 export const deleteUser = async (id: string): Promise<void> => {
-  console.log('Deleting user with ID:', id);
   await fetch(`${baseURL}/${id}`, { method: 'DELETE' });
 };

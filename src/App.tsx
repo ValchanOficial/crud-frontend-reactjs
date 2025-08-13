@@ -8,7 +8,7 @@ import { List } from "./components/List"
 import { queryClient } from "./main"
 
 export type User = {
-  id: string | null;
+  _id: string | null;
   name: string; // required
   gender: string | null;
   email: string | null;
@@ -25,14 +25,10 @@ function App() {
   const [showForm, setShowForm] = useState(false)
   const [isEditing, setIsEditing] = useState<User | undefined>()
 
-  const { data, isLoading, error } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ['users'],
     queryFn: fetchUsers,
   });
-
-  console.log('Data fetched:', data);
-  console.log('isLoading:', isLoading);
-  console.log('error:', error);
 
   const addPerson = useMutation({
     mutationFn: addUser,
