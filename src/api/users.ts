@@ -1,6 +1,7 @@
 import type { User } from '../App';
 
-const baseURL = 'http://localhost:3000/users';
+const baseURL =
+  'https://crud-backend-nestjs-production-3676.up.railway.app/users';
 
 export const fetchUsers = async (): Promise<User[]> => {
   const response = await fetch(`${baseURL}`);
